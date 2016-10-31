@@ -1,26 +1,217 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="c8J-Oy-yKQ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Daily Weather-->
+        <scene sceneID="Qon-ME-UAg">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="z6v-ZF-bhL" customClass="DailyTableViewController" customModule="niftyFlatironWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" id="ByE-OG-iGL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dailyCell" rowHeight="140" id="7jN-wg-NNj" customClass="DailyTableViewCell" customModule="niftyFlatironWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="140"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7jN-wg-NNj" id="geL-ON-58s">
+                                    <frame key="frameInset" width="375" height="140"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="H1I-b6-zBc">
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min Temp:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4i9-jd-nwi">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejd-oU-qBS">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6X-za-yHo">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="TXg-qD-rKg">
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Temp:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPP-TL-zr6">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YZ-oq-CCm">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TXg-qD-rKg" firstAttribute="top" secondItem="geL-ON-58s" secondAttribute="top" constant="20" id="47u-cD-PiP"/>
+                                        <constraint firstItem="D6X-za-yHo" firstAttribute="width" secondItem="H1I-b6-zBc" secondAttribute="width" id="4ii-PK-ydF"/>
+                                        <constraint firstItem="TXg-qD-rKg" firstAttribute="bottom" secondItem="H1I-b6-zBc" secondAttribute="top" constant="-20" id="CSU-2I-EvP"/>
+                                        <constraint firstItem="TXg-qD-rKg" firstAttribute="width" secondItem="geL-ON-58s" secondAttribute="width" multiplier="0.9" id="KlN-Kx-HS1"/>
+                                        <constraint firstItem="8YZ-oq-CCm" firstAttribute="width" secondItem="geL-ON-58s" secondAttribute="width" multiplier="0.6" id="LGL-fX-vNO"/>
+                                        <constraint firstItem="H1I-b6-zBc" firstAttribute="bottom" secondItem="D6X-za-yHo" secondAttribute="top" constant="-20" id="LH8-7i-vbO"/>
+                                        <constraint firstItem="H1I-b6-zBc" firstAttribute="leading" secondItem="geL-ON-58s" secondAttribute="leading" constant="20" id="bNl-Q5-ycd"/>
+                                        <constraint firstItem="D6X-za-yHo" firstAttribute="leading" secondItem="geL-ON-58s" secondAttribute="leading" constant="20" id="f5I-9E-CZo"/>
+                                        <constraint firstItem="TXg-qD-rKg" firstAttribute="leading" secondItem="geL-ON-58s" secondAttribute="leading" constant="20" id="fki-Iz-x8r"/>
+                                        <constraint firstItem="Ejd-oU-qBS" firstAttribute="width" secondItem="8YZ-oq-CCm" secondAttribute="width" id="lza-zP-C9r"/>
+                                        <constraint firstItem="H1I-b6-zBc" firstAttribute="height" secondItem="TXg-qD-rKg" secondAttribute="height" id="mos-VF-bJi"/>
+                                        <constraint firstItem="H1I-b6-zBc" firstAttribute="width" secondItem="TXg-qD-rKg" secondAttribute="width" id="ye7-Lg-hkS"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dailySummaryLabel" destination="D6X-za-yHo" id="XWo-jq-4MV"/>
+                                    <outlet property="maxTempLabel" destination="8YZ-oq-CCm" id="Tuv-aW-8ES"/>
+                                    <outlet property="minTempLabel" destination="Ejd-oU-qBS" id="e2m-5z-G0I"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="z6v-ZF-bhL" id="Vfc-lY-wdb"/>
+                            <outlet property="delegate" destination="z6v-ZF-bhL" id="U8X-33-V0Y"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Daily Weather" id="aum-39-QF3"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fWf-du-17U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-695.20000000000005" y="814.54272863568224"/>
+        </scene>
+        <!--Hourly Weather-->
+        <scene sceneID="98N-ed-h8t">
+            <objects>
+                <tableViewController id="ZQ7-Mi-mnb" customClass="HourlyTableVC" customModule="niftyFlatironWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" id="5IG-R9-hus">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourlyCell" rowHeight="140" id="Aza-NJ-6mc" customClass="HourlyTableViewCell" customModule="niftyFlatironWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="140"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aza-NJ-6mc" id="74B-ws-H5X">
+                                    <frame key="frameInset" width="375" height="140"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="YCe-rU-grP">
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9Z-pI-a8j">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LV0-He-Ce4">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u81-nN-r0W">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="u81-nN-r0W" firstAttribute="top" secondItem="YCe-rU-grP" secondAttribute="bottom" constant="20" id="Af8-jM-SzC"/>
+                                        <constraint firstItem="YCe-rU-grP" firstAttribute="top" secondItem="74B-ws-H5X" secondAttribute="top" constant="20" id="JAD-k7-EJN"/>
+                                        <constraint firstItem="YCe-rU-grP" firstAttribute="width" secondItem="74B-ws-H5X" secondAttribute="width" multiplier="0.9" id="NiX-y7-mHH"/>
+                                        <constraint firstItem="LV0-He-Ce4" firstAttribute="width" secondItem="74B-ws-H5X" secondAttribute="width" multiplier="0.6" id="NzS-MW-BGg"/>
+                                        <constraint firstItem="YCe-rU-grP" firstAttribute="leading" secondItem="74B-ws-H5X" secondAttribute="leading" constant="20" id="jbp-FA-Ckg"/>
+                                        <constraint firstItem="u81-nN-r0W" firstAttribute="width" secondItem="YCe-rU-grP" secondAttribute="width" id="rS7-Qh-x2H"/>
+                                        <constraint firstItem="u81-nN-r0W" firstAttribute="leading" secondItem="74B-ws-H5X" secondAttribute="leading" constant="20" id="tRj-JX-ddF"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="summaryLabel" destination="u81-nN-r0W" id="nNy-Em-4oK"/>
+                                    <outlet property="tempLabel" destination="LV0-He-Ce4" id="Flh-sQ-Czu"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZQ7-Mi-mnb" id="Kf0-qM-Yec"/>
+                            <outlet property="delegate" destination="ZQ7-Mi-mnb" id="g4F-2l-ldx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Hourly Weather" id="SM9-Ld-2Zt"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cb5-A5-fGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1484" y="814.54272863568224"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="UY8-40-hHr">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="c8J-Oy-yKQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Uag-Hn-pc6">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Udd-F5-Zk9" kind="relationship" relationship="viewControllers" id="Bxp-kX-Tvu"/>
+                        <segue destination="2CE-gl-TIi" kind="relationship" relationship="viewControllers" id="RBr-Sv-DFW"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gN7-hK-24C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1039" y="54"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WIj-Pd-cic">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Udd-F5-Zk9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="history" id="pwr-FE-MRa"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3jw-Qj-fTn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="z6v-ZF-bhL" kind="relationship" relationship="rootViewController" id="UYR-Bm-WVj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gVI-SA-6Jy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1634.4000000000001" y="814.54272863568224"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Z7B-DC-TFb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2CE-gl-TIi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="history" id="syD-rQ-Jcg"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aIl-JP-XEK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZQ7-Mi-mnb" kind="relationship" relationship="rootViewController" id="tiL-VA-eG1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G1M-4l-tTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="544.79999999999995" y="814.54272863568224"/>
         </scene>
     </scenes>
 </document>
